@@ -12,8 +12,9 @@ public class PlayerClass : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
-	}
+        warriorData = GetComponent<WarriorClass>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
