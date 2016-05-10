@@ -68,6 +68,9 @@ public class clicktomove : MonoBehaviour {
             moveSpeed = 6;
         }
 
+
+
+
         // Moves the Player if the Left Mouse Button was clicked
         if (Input.GetMouseButtonDown(0) && GUIUtility.hotControl == 0)
         {

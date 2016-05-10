@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Barrels : MonoBehaviour  {
+public class Barrels : MonoBehaviour
+{
+
+    public LevelSystem playerLevel;
 
 
     private Transform t;
@@ -12,7 +15,7 @@ public class Barrels : MonoBehaviour  {
 
     WarriorClass warrior;
 
-    GameObject go = GameObject.FindGameObjectWithTag("Player");
+  GameObject go = GameObject.FindGameObjectWithTag("Player");
 
 
     clicktomove click;
@@ -24,7 +27,7 @@ public class Barrels : MonoBehaviour  {
         BarHit = 3;
         t = this.transform;
         player = GameObject.FindGameObjectWithTag("Player").transform;
-    
+
     }
 
     private void Update()
@@ -37,22 +40,17 @@ public class Barrels : MonoBehaviour  {
 
         print(BarHit);
         print(hp);
-      //  print(go.GetComponent<PlayerClass>().warriorData.exp);
+        //  print(go.GetComponent<PlayerClass>().warriorData.exp);
     }
-
     private float Distance()
     {
         return Vector3.Distance(t.position, player.position);
     }
-
-
-
     //void OnMouseDown()
     //{
     //    if (Distance() < 3)
     //    {
-    //        Destroy(this.gameObject);
-
+    //        Destroy(this.gameObject);​
     //    }
     //}
    
@@ -60,22 +58,20 @@ public class Barrels : MonoBehaviour  {
     {
         if (Distance() < 3)
         {
-          //  click.moveSpeed = 0;
+            //  click.moveSpeed = 0;
             hp -= 10; //warrior.basedamage;
         }
-       
+
         if (hp <= 0)
         {
-            
-            go.GetComponent<PlayerClass>().warriorData.exp += 40;
+            playerLevel.exp = playerLevel.exp + 200;
+
             Destroy(this.gameObject);
+
+
         }
-   
-    
+
+
     }
-
-
-
-
-
 }
+
