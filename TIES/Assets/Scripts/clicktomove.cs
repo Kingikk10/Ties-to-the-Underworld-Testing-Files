@@ -6,7 +6,7 @@ public class clicktomove : MonoBehaviour {
     private float destinationDistance;          // The distance between myTransform and destinationPosition
 
 
-   public  WarriorClass warData;
+
 
     public float moveSpeed;
 

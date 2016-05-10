@@ -37,6 +37,7 @@ public class Barrels : MonoBehaviour  {
 
         print(BarHit);
         print(hp);
+      //  print(go.GetComponent<PlayerClass>().warriorData.exp);
     }
 
     private float Distance()
@@ -66,7 +67,7 @@ public class Barrels : MonoBehaviour  {
         if (hp <= 0)
         {
             
-            go.GetComponent<clicktomove>().warData.exp += 40;
+            go.GetComponent<PlayerClass>().warriorData.exp += 40;
             Destroy(this.gameObject);
         }
    
