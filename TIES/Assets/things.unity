@@ -410,6 +410,7 @@ GameObject:
   - 23: {fileID: 1272449073}
   - 54: {fileID: 1272449077}
   - 114: {fileID: 1272449078}
+  - 114: {fileID: 1272449079}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -501,6 +502,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0
+--- !u!114 &1272449079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1272449072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ecdd426f804d0e49a3e8c13159711ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: 0
 --- !u!1 &1343045670
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,7 +850,7 @@ GameObject:
   - 114: {fileID: 1964906950}
   m_Layer: 0
   m_Name: Barrels
-  m_TagString: Untagged
+  m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

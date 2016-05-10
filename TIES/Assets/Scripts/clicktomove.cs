@@ -11,12 +11,14 @@ public class clicktomove : MonoBehaviour {
     public float moveSpeed;
 
     private Vector3 Tressurechest;
+    private Vector3 Barrel;
 
     Chest chest;
 
     // Use this for initialization
     void Start ()
     {
+        Barrel = GameObject.FindGameObjectWithTag("barrel").transform.position;
         Tressurechest = GameObject.FindGameObjectWithTag("chest").transform.position;
         myTransform = transform;
         destinationPosition = myTransform.position;
@@ -41,12 +43,15 @@ public class clicktomove : MonoBehaviour {
 
 
 
-        if (Vector3.Distance(Tressurechest , myTransform.position) < 1.2f )
+        if (Input.GetMouseButtonDown(0) && (Vector3.Distance(Tressurechest , myTransform.position) < 5))
         {       
             moveSpeed = .5f;
         }
 
-
+        if (Input.GetMouseButtonDown(0) && (Vector3.Distance(Barrel, myTransform.position) < 5))
+        {
+            moveSpeed = .5f;
+        }
 
 
 

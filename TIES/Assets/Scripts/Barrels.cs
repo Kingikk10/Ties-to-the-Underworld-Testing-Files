@@ -11,8 +11,13 @@ public class Barrels : MonoBehaviour  {
     
 
     WarriorClass warrior;
+<<<<<<< HEAD
     GameObject go = GameObject.FindGameObjectWithTag("Player");
 
+=======
+    clicktomove click;
+    
+>>>>>>> origin/master
     private void Awake()
     {
         hp = 100;
@@ -54,6 +59,7 @@ public class Barrels : MonoBehaviour  {
     {
         if (Distance() < 3)
         {
+          //  click.moveSpeed = 0;
             hp -= 10; //warrior.basedamage;
         }
        
