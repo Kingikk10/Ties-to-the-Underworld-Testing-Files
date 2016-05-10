@@ -11,13 +11,13 @@ public class Barrels : MonoBehaviour  {
     
 
     WarriorClass warrior;
-<<<<<<< HEAD
+
     GameObject go = GameObject.FindGameObjectWithTag("Player");
 
-=======
+
     clicktomove click;
     
->>>>>>> origin/master
+
     private void Awake()
     {
         hp = 100;
