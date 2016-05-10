@@ -480,7 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67785914c68d81743b400cfbd613e7a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingImage: {fileID: 0}
+  loadingImage: {fileID: 1252614724}
 --- !u!114 &1410421834
 MonoBehaviour:
   m_ObjectHideFlags: 0
