@@ -5,6 +5,9 @@ public class clicktomove : MonoBehaviour {
     private Vector3 destinationPosition;        // The destination Point
     private float destinationDistance;          // The distance between myTransform and destinationPosition
 
+
+   public  WarriorClass warData;
+
     public float moveSpeed;
 
     private Vector3 Tressurechest;

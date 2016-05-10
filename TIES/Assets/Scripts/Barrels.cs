@@ -8,16 +8,18 @@ public class Barrels : MonoBehaviour  {
     private Transform player;
     float BarHit;
     float hp;
+    
 
     WarriorClass warrior;
+    GameObject go = GameObject.FindGameObjectWithTag("Player");
 
-    
     private void Awake()
     {
         hp = 100;
         BarHit = 3;
         t = this.transform;
         player = GameObject.FindGameObjectWithTag("Player").transform;
+    
     }
 
     private void Update()
@@ -47,7 +49,7 @@ public class Barrels : MonoBehaviour  {
 
     //    }
     //}
-
+   
     void OnMouseDown()
     {
         if (Distance() < 3)
@@ -57,10 +59,14 @@ public class Barrels : MonoBehaviour  {
        
         if (hp <= 0)
         {
+            
+            go.GetComponent<clicktomove>().warData.exp += 40;
             Destroy(this.gameObject);
         }
-
+   
+    
     }
+
 
 
 

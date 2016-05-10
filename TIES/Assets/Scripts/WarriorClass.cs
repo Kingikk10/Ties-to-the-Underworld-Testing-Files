@@ -5,13 +5,13 @@ public class WarriorClass
 {
 
 
-    int exp, level;
+    public int exp, level;
     int str, dex, vit, mag;
     int HealthPoints, ManaPoints;
     public int basedamage;
     int damageReduction;
 
-
+ 
 
 
 
@@ -37,7 +37,7 @@ public class WarriorClass
 	void Update ()
     {
     
-
+        
 
     }
 
