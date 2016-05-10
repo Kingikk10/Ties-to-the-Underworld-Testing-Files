@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-
 public class clicktomove : MonoBehaviour {
     private Transform myTransform;              // this transform
     private Vector3 destinationPosition;        // The destination Point
@@ -8,13 +7,14 @@ public class clicktomove : MonoBehaviour {
 
     public float moveSpeed;
 
+    private Vector3 Tressurechest;
 
-
-
+    Chest chest;
 
     // Use this for initialization
     void Start ()
     {
+        Tressurechest = GameObject.FindGameObjectWithTag("chest").transform.position;
         myTransform = transform;
         destinationPosition = myTransform.position;
 	}
@@ -22,6 +22,7 @@ public class clicktomove : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+
         destinationDistance = Vector3.Distance(destinationPosition, myTransform.position);
         if (destinationDistance < .5f)
         {       // To prevent shakin behavior when near destination
@@ -32,7 +33,29 @@ public class clicktomove : MonoBehaviour {
             moveSpeed = 3;
         }
 
-        if(Input.GetKey(KeyCode.LeftShift) )
+        //--------------------------Stoping Distance from GameObjects-------------------------------------------------------------------------------//
+     
+
+
+
+        if (Vector3.Distance(Tressurechest , myTransform.position) < 1.2f )
+        {       
+            moveSpeed = .5f;
+        }
+
+
+
+
+
+
+
+
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            moveSpeed = 0;
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift) )
         {
             moveSpeed = 6;
         }
@@ -54,7 +77,7 @@ public class clicktomove : MonoBehaviour {
             }
         }
 
-        // Moves the player if the mouse button is hold down
+        // Moves the player if the mouse button is held down
         else if (Input.GetMouseButton(0) && GUIUtility.hotControl == 0)
         {
 
