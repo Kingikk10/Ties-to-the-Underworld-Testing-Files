@@ -10,7 +10,7 @@ public class Barrels : MonoBehaviour  {
     float hp;
 
     WarriorClass warrior;
-
+    clicktomove click;
     
     private void Awake()
     {
@@ -52,6 +52,7 @@ public class Barrels : MonoBehaviour  {
     {
         if (Distance() < 3)
         {
+          //  click.moveSpeed = 0;
             hp -= 10; //warrior.basedamage;
         }
        
