@@ -3,9 +3,10 @@ using System.Collections;
 
 public class Escmenu : MonoBehaviour
 {
-
+    public WarriorClass warrior;
     //menu option to on or off
     public bool pauseMenu = false;
+
     //calculate screen size
     float sw;
     float sh;
@@ -18,10 +19,12 @@ public class Escmenu : MonoBehaviour
 
         //pause set back to false
         pauseMenu = false;
+
     }
 
     void Update()
     {
+
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             if (!pauseMenu)
@@ -41,20 +44,7 @@ public class Escmenu : MonoBehaviour
     void OnGUI()
     {
         //on top right side have a button to show main menu toggle 
-        if (GUI.Button(new Rect(sw - 50, 10, 40, 40), "X"))
-        {
-            if (!pauseMenu)
-            {
-                pauseMenu = true;
-                //set frame rate to 0 so game will pause objects will be still.
-                Time.timeScale = 0;
-            }
-            else
-            {
-                pauseMenu = false;
-                Time.timeScale = 1;
-            }
-        }
+
         //if pause
         if (pauseMenu)
         {
@@ -75,6 +65,8 @@ public class Escmenu : MonoBehaviour
                 Application.Quit();
             }
         }
+
     }
 
 }
+
