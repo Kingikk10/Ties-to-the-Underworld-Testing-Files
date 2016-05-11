@@ -13,7 +13,7 @@ public class Barrels : MonoBehaviour
     int hp;
     int gold;
     int dongers;
-
+    int ArmorValue;
    public WarriorClass warrior;
     
   
@@ -24,6 +24,7 @@ public class Barrels : MonoBehaviour
 
     private void Awake()
     {
+        ArmorValue = 5;
         hp = 100;
         BarHit = 3;
         t = this.transform;
@@ -34,14 +35,15 @@ public class Barrels : MonoBehaviour
 
     private void Update()
     {
-        if (player)
-            print(player.name + " is " + Distance().ToString() + " units from " + t.name);
+        //if (player)
+        //    print(player.name + " is " + Distance().ToString() + " units from " + t.name);
 
-        else
-            print("Player not found!");
+        //else
+        //    print("Player not found!");
 
-        print(BarHit);
+       // print(BarHit);
         print(hp);
+        
     
     }
     private float Distance()
@@ -66,7 +68,7 @@ public class Barrels : MonoBehaviour
         if (Distance() < 3)
         {
             //  click.moveSpeed = 0;
-            hp = hp - warrior.basedamage;
+            hp = hp - Mathf.Abs(ArmorValue - (warrior.basedamage + warrior.WeaponDamage));
         }
 
         if (hp <= 0)
