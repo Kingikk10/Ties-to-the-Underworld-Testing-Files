@@ -61,10 +61,10 @@ public class WarriorClass : MonoBehaviour
     }
     void OnGUI()
     {
-        GUI.Button(new Rect(sw - 1100, 550, 150, 50), "Health:" + HealthPoints);
-        GUI.Button(new Rect(sw - 100, 550, 100, 50), "Mana:" + ManaPoints);
+        GUI.Button(new Rect(0, 575, 150, 50), "Health:" + HealthPoints);
+        GUI.Button(new Rect(1000, 575, 100, 50), "Mana:" + ManaPoints);
         //on top right side have a button to show main menu toggle 
-        if (GUI.Button(new Rect(sw - 50, 10, 40, 40), "S:" + statpoints))
+        if (GUI.Button(new Rect(1060, 0, 40, 40), "S:" + statpoints))
         {
             if (!StatsMenu)
             {
@@ -81,7 +81,7 @@ public class WarriorClass : MonoBehaviour
         if (StatsMenu)
         {
             //resume button
-            if (GUI.Button(new Rect(sw / 2 - 100, 200, 200, 50), "Stregth:" + str))
+            if (GUI.Button(new Rect(450, 200, 200, 50), "Stregth:" + str))
             {
                 if (statpoints > 0)
                 {
@@ -91,7 +91,7 @@ public class WarriorClass : MonoBehaviour
 
             }
             //Exit to Menu button
-            if (GUI.Button(new Rect(sw / 2 - 100, 260, 200, 50), "Dex:" + dex))
+            if (GUI.Button(new Rect(450, 260, 200, 50), "Dex:" + dex))
             {
                 if (statpoints > 0)
                 {
@@ -100,7 +100,7 @@ public class WarriorClass : MonoBehaviour
                 }
             }
             //Quit button
-            if (GUI.Button(new Rect(sw / 2 - 100, 320, 200, 50), "Vit:" + vit))
+            if (GUI.Button(new Rect(450, 320, 200, 50), "Vit:" + vit))
             {
                 if (statpoints > 0)
                 {
@@ -108,7 +108,7 @@ public class WarriorClass : MonoBehaviour
                     vit = vit + 1;
                 }
             }
-            if (GUI.Button(new Rect(sw / 2 - 100, 380, 200, 50), "Mag:" + mag))
+            if (GUI.Button(new Rect(450, 380, 200, 50), "Mag:" + mag))
             {
                 if (statpoints > 0)
                 {

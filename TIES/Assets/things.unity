@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 839533fd02532c24383748914d05096d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  warrior: {fileID: 1272449081}
+  warrior: {fileID: 0}
   playerLevel: {fileID: 1272449080}
 --- !u!23 &430761959
 MeshRenderer:
@@ -605,6 +605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ecdd426f804d0e49a3e8c13159711ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  warrior: {fileID: 0}
   pauseMenu: 0
 --- !u!114 &1272449080
 MonoBehaviour:
@@ -619,6 +620,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   exp: 0
+  statpoints: 0
+  warrior: {fileID: 1272449081}
 --- !u!114 &1272449081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -632,9 +635,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exp: 0
   level: 0
+  str: 0
+  dex: 0
+  vit: 0
+  mag: 0
   basedamage: 0
   damageReduction: 0
   WeaponDamage: 0
+  StatsMenu: 0
+  statpoints: 0
 --- !u!1 &1343045670
 GameObject:
   m_ObjectHideFlags: 0
