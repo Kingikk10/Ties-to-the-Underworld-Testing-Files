@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 839533fd02532c24383748914d05096d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  warrior: {fileID: 0}
+  warrior: {fileID: 1272449081}
   playerLevel: {fileID: 1272449080}
 --- !u!23 &430761959
 MeshRenderer:
