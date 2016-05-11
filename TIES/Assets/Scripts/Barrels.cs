@@ -10,12 +10,13 @@ public class Barrels : MonoBehaviour
     private Transform t;
     private Transform player;
     float BarHit;
-    float hp;
+    int hp;
+    int gold;
+    int dongers;
+
+   public WarriorClass warrior;
     
-
-    WarriorClass warrior;
-
-  GameObject go = GameObject.FindGameObjectWithTag("Player");
+  
 
 
     clicktomove click;
@@ -27,6 +28,7 @@ public class Barrels : MonoBehaviour
         BarHit = 3;
         t = this.transform;
         player = GameObject.FindGameObjectWithTag("Player").transform;
+   
 
     }
 
@@ -40,32 +42,37 @@ public class Barrels : MonoBehaviour
 
         print(BarHit);
         print(hp);
-        //  print(go.GetComponent<PlayerClass>().warriorData.exp);
+    
     }
     private float Distance()
     {
         return Vector3.Distance(t.position, player.position);
     }
-    //void OnMouseDown()
-    //{
-    //    if (Distance() < 3)
-    //    {
-    //        Destroy(this.gameObject);​
-    //    }
-    //}
+    void golddrop()
+    {
+       dongers = Random.Range(1, 5);
+        //for(int dongers = Random.Range(1, 5); dongers < 5; dongers++)
+        {
+            GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+
+          sphere.transform.position = new Vector3(t.position.x, t.position.y);
+
+        }
+       
+    }
    
     void OnMouseDown()
     {
         if (Distance() < 3)
         {
             //  click.moveSpeed = 0;
-            hp -= 10; //warrior.basedamage;
+            hp = hp - warrior.basedamage;
         }
 
         if (hp <= 0)
         {
             playerLevel.exp = playerLevel.exp + 200;
-
+            golddrop();
             Destroy(this.gameObject);
 
 

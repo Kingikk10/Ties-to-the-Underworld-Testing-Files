@@ -411,6 +411,8 @@ GameObject:
   - 54: {fileID: 1272449077}
   - 114: {fileID: 1272449078}
   - 114: {fileID: 1272449079}
+  - 114: {fileID: 1272449080}
+  - 114: {fileID: 1272449081}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -514,6 +516,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: 0
+--- !u!114 &1272449080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1272449072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32c75c2d964559e4c9d7fd3a381931f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  exp: 0
+--- !u!114 &1272449081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1272449072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba52a566a7e48124a9c456f0f4a0cb73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exp: 0
+  level: 0
+  basedamage: 0
 --- !u!1 &1343045670
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,3 +953,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9178641a0ea6344bf452c647dbd1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLevel: {fileID: 1272449080}
+  warrior: {fileID: 1272449081}
