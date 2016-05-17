@@ -27,11 +27,11 @@ public class EnemeyTesting : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (Vector3.Distance(target.position, mytransform.position) < 5)
-        {
-            mytransform.rotation = Quaternion.Slerp(mytransform.rotation, Quaternion.LookRotation(target.position - mytransform.position), rotationSpeed * Time.deltaTime);
-            mytransform.position += mytransform.forward * moveSpeed * Time.deltaTime;
-        }
+     //   if (Vector3.Distance(target.position, mytransform.position) < 5)
+      //  {
+      //      mytransform.rotation = Quaternion.Slerp(mytransform.rotation, Quaternion.LookRotation(target.position - mytransform.position), rotationSpeed * Time.deltaTime);
+      //      mytransform.position += mytransform.forward * moveSpeed * Time.deltaTime;
+      //  }
 
     }
     private float Distance()

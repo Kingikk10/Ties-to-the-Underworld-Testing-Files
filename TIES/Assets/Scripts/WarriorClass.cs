@@ -7,13 +7,13 @@ public class WarriorClass : MonoBehaviour
 
     public int exp, level;
   public int str, dex, vit, mag;
-    int HealthPoints, ManaPoints;
+   public  int HealthPoints, ManaPoints;
     public int basedamage;
     public int damageReduction;
     public int WeaponDamage;
     public int weapon;
     public bool StatsMenu = false;
-
+    public int damageTaken;
     public int statpoints;
 
     float sw;
@@ -53,7 +53,7 @@ public class WarriorClass : MonoBehaviour
             }
         }
 
-        HealthPoints = vit * 5;
+        HealthPoints = (vit * 5) - damageTaken;
         ManaPoints = mag * 5;
         basedamage = str / 2;
 
