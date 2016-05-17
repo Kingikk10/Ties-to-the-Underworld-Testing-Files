@@ -42,7 +42,7 @@ public class Barrels : MonoBehaviour
         //    print("Player not found!");
 
        // print(BarHit);
-        print(hp);
+        //print(hp);
         
     
     }

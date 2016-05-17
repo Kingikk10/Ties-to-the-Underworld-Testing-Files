@@ -11,7 +11,7 @@ public class WarriorClass : MonoBehaviour
     public int basedamage;
     public int damageReduction;
     public int WeaponDamage;
-
+    public int weapon;
     public bool StatsMenu = false;
 
     public int statpoints;
@@ -31,7 +31,7 @@ public class WarriorClass : MonoBehaviour
         mag = 4;
         StatsMenu = false;
 
-      
+
         WeaponDamage = 6; //hard value for testing only, this should come from the weapon tables.
     
     }
