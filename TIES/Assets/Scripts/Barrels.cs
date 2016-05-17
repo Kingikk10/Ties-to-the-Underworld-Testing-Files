@@ -41,10 +41,10 @@ public class Barrels : MonoBehaviour
         //else
         //    print("Player not found!");
 
-       // print(BarHit);
-        //print(hp);
-        
-    
+        // print(BarHit);
+        print(hp);
+
+
     }
     private float Distance()
     {

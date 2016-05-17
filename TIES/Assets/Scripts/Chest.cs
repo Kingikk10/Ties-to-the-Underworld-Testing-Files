@@ -21,11 +21,11 @@ public class Chest : MonoBehaviour {
 
     private void Update()
     {
-        //if (player)
-        //    print(player.name + " is " + Distance().ToString() + " units from " + t.name);
+        if (player)
+            print(player.name + " is " + Distance().ToString() + " units from " + t.name);
 
-        //else
-        //    print("Player not found!");
+        else
+            print("Player not found!");
     }
 
     private float Distance()

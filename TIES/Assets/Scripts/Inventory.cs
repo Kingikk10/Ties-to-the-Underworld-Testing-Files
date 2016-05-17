@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviour
     public List<Item> inventory = new List<Item>();
     public List<Item> slots = new List<Item>();
     private ItemDatabase database;
-    private bool showInventory;
+    public bool showInventory;
     private bool showTooltip;
     private string tooltip;
 
@@ -32,13 +32,19 @@ public class Inventory : MonoBehaviour
         AddItem(0);
         AddItem(2);
         print(InventoryContains(1));
+        showInventory = false;
     }
     void Update()
     {
+
         if (Input.GetButtonDown("Inventory"))
         {
+            Time.timeScale = 0;
             showInventory = !showInventory;
+  
         }
+        
+        
     }
     void OnGUI()
     {
@@ -59,7 +65,8 @@ public class Inventory : MonoBehaviour
 
     void DrawInventory()
     {
-        Event e = Event.current;
+   
+            Event e = Event.current;
         int i = 0;
         for (int y = 0; y < slotsX; y++)
         {
