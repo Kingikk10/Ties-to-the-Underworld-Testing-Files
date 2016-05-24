@@ -5,8 +5,8 @@ public class Inventory : MonoBehaviour
 {
     public int slotsX, slotsY;
     public GUISkin skin;
-    public List<Item> inventory = new List<Item>();
-    public List<Item> slots = new List<Item>();
+    public List<BaseItem> inventory = new List<BaseItem>();
+    public List<BaseItem> slots = new List<BaseItem>();
     private ItemDatabase database;
     public bool showInventory;
     private bool showTooltip;
@@ -15,17 +15,18 @@ public class Inventory : MonoBehaviour
 
 
 
-    private bool draggingItem;
-    private Item draggedItem;
+    public bool draggingItem;
+    private BaseItem draggedItem;
     private int prevIndex;
 
     // Use this for initialization
     void Start()
     {
+      
         for (int i = 0; i < (slotsX * slotsY); i++)
         {
-            slots.Add(new Item());
-            inventory.Add(new Item());
+            slots.Add(new BaseItem());
+            inventory.Add(new BaseItem());
         }
         database = GameObject.FindGameObjectWithTag("Item Database").GetComponent<ItemDatabase>();
         AddItem(1);
@@ -39,7 +40,7 @@ public class Inventory : MonoBehaviour
 
         if (Input.GetButtonDown("Inventory"))
         {
-            Time.timeScale = 0;
+
             showInventory = !showInventory;
   
         }
@@ -57,6 +58,7 @@ public class Inventory : MonoBehaviour
                 GUI.Box(new Rect(Event.current.mousePosition.x + 15, Event.current.mousePosition.y, 200, 200), tooltip, skin.GetStyle("Tooltip"));
 
         }
+      
         if (draggingItem)
         {
             GUI.DrawTexture(new Rect(Event.current.mousePosition.x, Event.current.mousePosition.y, 50, 50), draggedItem.itemIcon);
@@ -87,7 +89,7 @@ public class Inventory : MonoBehaviour
                             draggingItem = true;
                             prevIndex = i;
                             draggedItem = slots[i];
-                            inventory[i] = new Item();
+                            inventory[i] = new BaseItem();
                         }
                         if (e.type == EventType.mouseUp && draggingItem)
                         {
@@ -113,7 +115,7 @@ public class Inventory : MonoBehaviour
                 }
                 if (e.isMouse && e.type == EventType.mouseDown && e.button == 1)
                 {
-                    if (slots[i].itemType == Item.ItemType.Consmable)
+                    if (slots[i].ItemType == BaseItem.ItemTypes.Potions)
                     {
                         UseConsumable(slots[i], i, true);
                     }
@@ -128,9 +130,9 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    string CreateTooltip(Item item)
+    string CreateTooltip(BaseItem item)
     {
-        tooltip = "<color=#fffff>" + item.itemName + "</color>\n" + item.itemDesc;
+        tooltip = "<color=#fffff>" + item.itemName + "</color>\n" + item.itemDescription;
         return tooltip;
 
     }
@@ -140,14 +142,14 @@ public class Inventory : MonoBehaviour
         {
             if (inventory[i].itemID == id)
             {
-                inventory[i] = new Item();
+                inventory[i] = new BaseItem();
                 break;
             }
         }
     }
 
 
-    void AddItem(int id)
+   public void AddItem(int id)
     {
         for (int i = 0; i < inventory.Count; i++)
         {
@@ -179,7 +181,7 @@ public class Inventory : MonoBehaviour
         }
         return result;
     }
-    private void UseConsumable(Item item, int slot, bool deleteItem)
+    private void UseConsumable(BaseItem item, int slot, bool deleteItem)
     {
         switch (item.itemID)
         {
@@ -191,7 +193,7 @@ public class Inventory : MonoBehaviour
         }
         if (deleteItem)
         {
-            inventory[slot] = new Item();
+            inventory[slot] = new BaseItem();
         }
     }
 }

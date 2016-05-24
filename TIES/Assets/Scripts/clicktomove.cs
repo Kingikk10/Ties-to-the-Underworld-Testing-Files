@@ -44,13 +44,14 @@ public class clicktomove : MonoBehaviour {
 
 
         if (Input.GetMouseButtonDown(0) && (Vector3.Distance(Tressurechest , myTransform.position) < 5))
-        {       
+        {        
             moveSpeed = .5f;
         }
 
         if (Input.GetMouseButtonDown(0) && (Vector3.Distance(Barrel, myTransform.position) < 5))
         {
             moveSpeed = .5f;
+
         }
 
 

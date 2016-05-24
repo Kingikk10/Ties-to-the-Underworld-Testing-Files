@@ -15,9 +15,9 @@ public class Barrels : MonoBehaviour
     int dongers;
     int ArmorValue;
    public WarriorClass warrior;
-    
-  
-
+    Transform weapons1;
+    CreateNewEquipment equipment;
+    CreateNewWeapon weapon;
 
     clicktomove click;
     
@@ -29,8 +29,9 @@ public class Barrels : MonoBehaviour
         BarHit = 3;
         t = this.transform;
         player = GameObject.FindGameObjectWithTag("Player").transform;
-   
-
+        weapons1 = Resources.Load<Transform>("Coin");
+        equipment = t.GetComponent<CreateNewEquipment>();
+        weapon = t.GetComponent<CreateNewWeapon>();
     }
 
     private void Update()
@@ -42,7 +43,7 @@ public class Barrels : MonoBehaviour
         //    print("Player not found!");
 
         // print(BarHit);
-        print(hp);
+       // print(hp);
 
 
     }
@@ -52,12 +53,8 @@ public class Barrels : MonoBehaviour
     }
     void golddrop()
     {
-       dongers = Random.Range(1, 5);
-        //for(int dongers = Random.Range(1, 5); dongers < 5; dongers++)
         {
-            GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-
-          sphere.transform.position = new Vector3(t.position.x, t.position.y);
+            Instantiate(weapons1, transform.position, Quaternion.identity);
 
         }
        
@@ -73,8 +70,15 @@ public class Barrels : MonoBehaviour
 
         if (hp <= 0)
         {
+            int randomTemp = Random.Range(1, 100);
+            if(randomTemp > 1)
+            {
+                equipment.CreateEquipment();
+                //weapon.CreateWeapon();
+            } 
             playerLevel.exp = playerLevel.exp + 200;
-            golddrop();
+           golddrop();
+            
             Destroy(this.gameObject);
 
 

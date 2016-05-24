@@ -7,7 +7,7 @@ public class WarriorClass : MonoBehaviour
 
     public int exp, level;
   public int str, dex, vit, mag;
-   public  int HealthPoints, ManaPoints;
+   public  int HealthPoints, ManaPoints, MaxHealth;
     public int basedamage;
     public int damageReduction;
     public int WeaponDamage;
@@ -15,13 +15,16 @@ public class WarriorClass : MonoBehaviour
     public bool StatsMenu = false;
     public int damageTaken;
     public int statpoints;
-
+    public int healthpots, manapots;
     float sw;
     float sh;
-
+    public int maxhealthpots, maxmanapots;
+    public int gold;
+    CoinPickup coin;
     // Use this for initialization
     void Start ()
     {
+        
         level = 1;
         exp = 0;
 
@@ -30,8 +33,8 @@ public class WarriorClass : MonoBehaviour
         vit = 10;
         mag = 4;
         StatsMenu = false;
-
-
+        healthpots = 5;
+        gold = 50;
         WeaponDamage = 6; //hard value for testing only, this should come from the weapon tables.
     
     }
@@ -39,14 +42,7 @@ public class WarriorClass : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKeyUp(KeyCode.I))
-        {
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Time.timeScale = 1;
-        }
+
 
         if (Input.GetKeyUp(KeyCode.K))
         {
@@ -60,17 +56,34 @@ public class WarriorClass : MonoBehaviour
                 Time.timeScale = 1;
             }
         }
-
-        HealthPoints = (vit * 5) - damageTaken;
+        MaxHealth = (vit * 5);
+        HealthPoints = MaxHealth - damageTaken;
+        if(HealthPoints > MaxHealth)
+        {
+            HealthPoints = MaxHealth;
+        }
+     
         ManaPoints = mag * 5;
         basedamage = str / 2;
-
+        
 
     }
     void OnGUI()
     {
+        GUI.Button(new Rect(0, 455, 150, 50), "GOLD:" + gold);
+        if (GUI.Button(new Rect(450, 600, 200, 50), "HpPots:" + healthpots))
+        {
+            if (healthpots > 0 && damageTaken > 0)
+            {
+                healthpots = healthpots - 1;
+                damageTaken = damageTaken - 10;
+            }
+
+        }
         GUI.Button(new Rect(0, 575, 150, 50), "Health:" + HealthPoints);
         GUI.Button(new Rect(1000, 575, 100, 50), "Mana:" + ManaPoints);
+
+        
         //on top right side have a button to show main menu toggle 
         if (GUI.Button(new Rect(1060, 0, 40, 40), "S:" + statpoints))
         {
