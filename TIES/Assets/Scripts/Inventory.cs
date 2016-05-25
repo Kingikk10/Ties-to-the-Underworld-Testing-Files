@@ -29,10 +29,6 @@ public class Inventory : MonoBehaviour
             inventory.Add(new BaseItem());
         }
         database = GameObject.FindGameObjectWithTag("Item Database").GetComponent<ItemDatabase>();
-        AddItem(1);
-        AddItem(0);
-        AddItem(2);
-        print(InventoryContains(1));
         showInventory = false;
     }
     void Update()
@@ -61,7 +57,7 @@ public class Inventory : MonoBehaviour
       
         if (draggingItem)
         {
-            GUI.DrawTexture(new Rect(Event.current.mousePosition.x, Event.current.mousePosition.y, 50, 50), draggedItem.itemIcon);
+            GUI.DrawTexture(new Rect(Event.current.mousePosition.x, Event.current.mousePosition.y, 50, 50), draggedItem.ITEMicon);
         }
     }
 
@@ -79,7 +75,7 @@ public class Inventory : MonoBehaviour
                 slots[i] = inventory[i];
                 if (slots[i].itemName != null)
                 {
-                    GUI.DrawTexture(slotRect, slots[i].itemIcon);
+                    GUI.DrawTexture(slotRect, slots[i].ITEMicon);
                     if (slotRect.Contains(e.mousePosition))
                     {
                         CreateTooltip(slots[i]);

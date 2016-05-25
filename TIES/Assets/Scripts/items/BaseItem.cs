@@ -6,7 +6,8 @@ public class BaseItem : MonoBehaviour {
     public string itemName;
     public string itemDescription;
     public int itemID;
-    public Texture2D itemIcon;
+    public Transform itemIcon;
+    public Texture2D ITEMicon;
     public enum ItemTypes
     {
         Weapon,
@@ -16,10 +17,15 @@ public class BaseItem : MonoBehaviour {
     }
     public ItemTypes itemType;
 
-    public Texture2D ItemIcon
+    public Transform ItemIcon
     {
         get { return itemIcon; }
         set { itemIcon = value; }
+    }
+    public Texture2D ITEMICON
+    {
+        get { return ITEMicon; }
+        set { ITEMicon = value; }
     }
     public string ItemName
     {

@@ -130,6 +130,7 @@ MonoBehaviour:
   inventory: []
   slots: []
   showInventory: 0
+  draggingItem: 0
 --- !u!1 &351722447
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,6 +911,7 @@ GameObject:
   - 114: {fileID: 1272449081}
   - 114: {fileID: 1272449082}
   - 114: {fileID: 1272449083}
+  - 114: {fileID: 1272449084}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1085,6 +1087,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coins: 0
+--- !u!114 &1272449084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1272449072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bc0b2d30c64ea546b54623d3627ee30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1343045670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,6 +1210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb0ff98b989fa7b4ca5945c60e04cd96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newWeapon: {fileID: 0}
+  weaponids: 0
 --- !u!114 &1343045678
 MonoBehaviour:
   m_ObjectHideFlags: 0

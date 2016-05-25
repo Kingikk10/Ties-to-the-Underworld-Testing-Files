@@ -17,12 +17,12 @@ public class Barrels : MonoBehaviour
    public WarriorClass warrior;
     Transform weapons1;
     CreateNewEquipment equipment;
-    CreateNewWeapon weapon;
+    public CreateNewWeapon weapon;
 
-    clicktomove click;
+   
     
 
-    private void Awake()
+    void Awake()
     {
         ArmorValue = 5;
         hp = 100;
@@ -59,7 +59,10 @@ public class Barrels : MonoBehaviour
         }
        
     }
-   
+   void drop()
+    {
+        weapon.CreateWeapon();
+    }
     void OnMouseDown()
     {
         if (Distance() < 3)
@@ -73,8 +76,9 @@ public class Barrels : MonoBehaviour
             int randomTemp = Random.Range(1, 100);
             if(randomTemp > 1)
             {
-                equipment.CreateEquipment();
-                //weapon.CreateWeapon();
+
+                //equipment.CreateEquipment();
+                drop();
             } 
             playerLevel.exp = playerLevel.exp + 200;
            golddrop();

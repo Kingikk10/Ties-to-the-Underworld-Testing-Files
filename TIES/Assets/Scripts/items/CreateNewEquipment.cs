@@ -39,7 +39,7 @@ public class CreateNewEquipment : MonoBehaviour {
     {
         newEquipmet = new BaseEquipment();
         newEquipmet.ItemName = itemNames[Random.Range(0, 3)] + " Item";
-        newEquipmet.ItemID = Random.Range(1, 101);
+  
         ChooseItemType();
         ChooseRarity();
         if (newEquipmet.Raritytype == BaseEquipment.RarityType.Common)

@@ -5,13 +5,14 @@ public class WeaponPickUp : MonoBehaviour {
     private Transform t;
     private Transform player;
     Inventory inv;
-    CreateNewWeapon weap;
-    BaseWeapon newWeapon;
+    CreateNewEquipment equip;
+    BaseEquipment equipment;
     // Use this for initialization
     void Start () {
         t = this.transform;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         inv = player.GetComponent<Inventory>();
+        equipment = player.GetComponent<BaseEquipment>();
     }
 	
 	// Update is called once per frame
@@ -24,14 +25,8 @@ public class WeaponPickUp : MonoBehaviour {
     }
     void OnMouseDown()
     {
-        
-            inv.AddItem(newWeapon.ItemID);
-
-        
-       
-            Destroy(this.gameObject);
-        
-
+        inv.AddItem(equipment.itemID);
+        Destroy(this.gameObject);
 
     }
 }

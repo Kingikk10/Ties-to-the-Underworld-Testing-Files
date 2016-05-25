@@ -8,6 +8,11 @@ public class CreateNewWeapon : MonoBehaviour {
     Transform magic;
     Transform rare;
     Transform legdendary;
+    Texture2D Common;
+    Texture2D Magic;
+    Texture2D Rare;
+    Texture2D Legdendary;
+   public int weaponids;
     private string[] itemDes = new string[2] { "An new cool item", "A new lame item" };
     void Start()
     {
@@ -15,6 +20,11 @@ public class CreateNewWeapon : MonoBehaviour {
         magic = Resources.Load<Transform>("Magic");
         rare = Resources.Load<Transform>("Rare");
         legdendary = Resources.Load<Transform>("Legdendary");
+        Common = Resources.Load<Texture2D>("Common");
+        Magic = Resources.Load<Texture2D>("Magic");
+        Rare = Resources.Load<Texture2D>("Rare");
+        Legdendary = Resources.Load<Texture2D>("Legdendary");
+        weaponids = 0;
         //CreateWeapon();
         //Debug.Log(newWeapon.ItemName);
         //Debug.Log(newWeapon.ItemDescripton);
@@ -33,18 +43,19 @@ public class CreateNewWeapon : MonoBehaviour {
 
         newWeapon.ItemDescripton = "This is a new Weapon.";
 
-        newWeapon.ItemID = Random.Range(1, 101);
+        newWeapon.ItemID = Random.Range(1, 100);
+        weaponids = newWeapon.itemID;
         ChooseWeaponType();
         ChooseRarity();
         if (newWeapon.Raritytype == BaseEquipment.RarityType.Common)
         {
-            newWeapon.itemIcon = Resources.Load<Texture2D>("Common");
+            newWeapon.itemIcon = common;
             newWeapon.ItemDescripton = itemDes[Random.Range(0, itemDes.Length)];
             Instantiate(common, transform.position, Quaternion.identity);
         }
         else if (newWeapon.Raritytype == BaseEquipment.RarityType.Magic)
         {
-            newWeapon.itemIcon = Resources.Load<Texture2D>("Magic");
+            newWeapon.itemIcon = magic;
             newWeapon.ItemDescripton = itemDes[Random.Range(0, itemDes.Length)];
 
             ChooseStat();
@@ -52,7 +63,7 @@ public class CreateNewWeapon : MonoBehaviour {
         }
         else if (newWeapon.Raritytype == BaseEquipment.RarityType.Rare)
         {
-            newWeapon.itemIcon = Resources.Load<Texture2D>("Rare");
+            newWeapon.itemIcon = rare;
             newWeapon.ItemDescripton = itemDes[Random.Range(0, itemDes.Length)];
             ChooseStat();
             ChooseStat();
@@ -60,7 +71,7 @@ public class CreateNewWeapon : MonoBehaviour {
         }
         else if (newWeapon.Raritytype == BaseEquipment.RarityType.Legendary)
         {
-            newWeapon.itemIcon = Resources.Load<Texture2D>("Legdendary");
+            newWeapon.itemIcon = legdendary;
             newWeapon.ItemDescripton = itemDes[Random.Range(0, itemDes.Length)];
             ChooseStat();
             ChooseStat();
