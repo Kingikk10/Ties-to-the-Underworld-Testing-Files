@@ -7,7 +7,7 @@ public class Barrels : MonoBehaviour
     public LevelSystem playerLevel;
 
 
-    private Transform t;
+    public Transform t;
     private Transform player;
     float BarHit;
     int hp;
@@ -17,7 +17,7 @@ public class Barrels : MonoBehaviour
    public WarriorClass warrior;
     Transform weapons1;
     CreateNewEquipment equipment;
-    public CreateNewWeapon weapon;
+    CreateNewWeapon weapon;
 
    
     
@@ -31,7 +31,7 @@ public class Barrels : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         weapons1 = Resources.Load<Transform>("Coin");
         equipment = t.GetComponent<CreateNewEquipment>();
-        weapon = t.GetComponent<CreateNewWeapon>();
+      //  weapon = t.GetComponent<CreateNewWeapon>();
     }
 
     private void Update()
@@ -43,8 +43,8 @@ public class Barrels : MonoBehaviour
         //    print("Player not found!");
 
         // print(BarHit);
-       // print(hp);
-
+        // print(hp);
+        weapon = t.GetComponent<CreateNewWeapon>();
 
     }
     private float Distance()

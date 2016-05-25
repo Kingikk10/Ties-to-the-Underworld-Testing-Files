@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
 public class BaseItem : MonoBehaviour {
 
     public string itemName;
@@ -8,6 +8,11 @@ public class BaseItem : MonoBehaviour {
     public int itemID;
     public Transform itemIcon;
     public Texture2D ITEMicon;
+    public int damage;
+    public int strength;
+    public int intellect;
+    public int vit;
+    public int dex;
     public enum ItemTypes
     {
         Weapon,
@@ -15,8 +20,22 @@ public class BaseItem : MonoBehaviour {
         Potions,
         Quest
     }
-    public ItemTypes itemType;
 
+    public enum RarityType
+    {
+        Common,
+        Magic,
+        Rare,
+        Legendary
+    }
+
+    public ItemTypes itemType;
+    //public BaseItem(Dictionary<string, string> itemsDictionary)
+    //{
+    //    itemName = itemsDictionary["ItemName"];
+    //    itemID = int.Parse(itemsDictionary["ItemID"]);
+    //    itemType = (ItemTypes)System.Enum.Parse(typeof(BaseItem.ItemTypes), itemsDictionary["itemType"].ToString());
+    //}
     public Transform ItemIcon
     {
         get { return itemIcon; }
@@ -46,5 +65,38 @@ public class BaseItem : MonoBehaviour {
     {
         get { return itemType; }
         set { itemType = value; }
+    }
+    private RarityType rarityType;
+
+    public RarityType Raritytype
+    {
+        get { return rarityType; }
+        set { rarityType = value; }
+
+    }
+    public int Damage
+    {
+        get { return damage; }
+        set { damage = value; }
+    }
+    public int Strength
+    {
+        get { return strength; }
+        set { strength = value; }
+    }
+    public int Intellect
+    {
+        get { return intellect; }
+        set { intellect = value; }
+    }
+    public int Vit
+    {
+        get { return vit; }
+        set { vit = value; }
+    }
+    public int Dex
+    {
+        get { return dex; }
+        set { dex = value; }
     }
 }

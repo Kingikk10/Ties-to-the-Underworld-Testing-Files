@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CreateNewWeapon : MonoBehaviour {
 
-    public BaseWeapon newWeapon;
+    BaseWeapon newWeapon;
     Transform common;
     Transform magic;
     Transform rare;
@@ -12,7 +12,8 @@ public class CreateNewWeapon : MonoBehaviour {
     Texture2D Magic;
     Texture2D Rare;
     Texture2D Legdendary;
-   public int weaponids;
+    Barrels bar;
+
     private string[] itemDes = new string[2] { "An new cool item", "A new lame item" };
     void Start()
     {
@@ -24,19 +25,10 @@ public class CreateNewWeapon : MonoBehaviour {
         Magic = Resources.Load<Texture2D>("Magic");
         Rare = Resources.Load<Texture2D>("Rare");
         Legdendary = Resources.Load<Texture2D>("Legdendary");
-        weaponids = 0;
-        //CreateWeapon();
-        //Debug.Log(newWeapon.ItemName);
-        //Debug.Log(newWeapon.ItemDescripton);
-        //Debug.Log(newWeapon.ItemID.ToString());
-        //Debug.Log(newWeapon.WeaponType.ToString());
-        //Debug.Log(newWeapon.Vit.ToString());
-        //Debug.Log(newWeapon.Dex.ToString());
-
-
     }
     public void CreateWeapon()
     {
+      
         newWeapon = new BaseWeapon();
 
         newWeapon.ItemName = "W" + Random.Range(1, 101);
@@ -44,7 +36,7 @@ public class CreateNewWeapon : MonoBehaviour {
         newWeapon.ItemDescripton = "This is a new Weapon.";
 
         newWeapon.ItemID = Random.Range(1, 100);
-        weaponids = newWeapon.itemID;
+     
         ChooseWeaponType();
         ChooseRarity();
         if (newWeapon.Raritytype == BaseEquipment.RarityType.Common)
@@ -80,7 +72,7 @@ public class CreateNewWeapon : MonoBehaviour {
         }
     }
 
-    private void ChooseRarity()
+    void ChooseRarity()
     {
         int randomTemp = Random.Range(1, 101);
         if (randomTemp < 60)
@@ -102,7 +94,7 @@ public class CreateNewWeapon : MonoBehaviour {
 
     }
 
-    private void ChooseStat()
+   void ChooseStat()
     {
         int randomTemp = Random.Range(1, 4);
         newWeapon.Intellect = newWeapon.Intellect;
@@ -128,7 +120,7 @@ public class CreateNewWeapon : MonoBehaviour {
         }
     }
 
-    private void ChooseWeaponType()
+    void ChooseWeaponType()
     {
         int randomTemp = Random.Range(1, 4);
         if(randomTemp == 1)
