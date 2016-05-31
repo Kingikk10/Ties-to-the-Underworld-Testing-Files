@@ -13,9 +13,8 @@ GameObject:
   - 23: {fileID: 2390318}
   - 114: {fileID: 11486618}
   - 114: {fileID: 11468696}
-  - 114: {fileID: 11407268}
-  - 114: {fileID: 11463946}
   - 114: {fileID: 11421286}
+  - 114: {fileID: 11476348}
   m_Layer: 0
   m_Name: Common
   m_TagString: Untagged
@@ -68,28 +67,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146062}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &11407268
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 146062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16631633bf2370f4e98acae89a16ec7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: 
-  itemDescription: 
-  itemID: 0
-  itemIcon: {fileID: 0}
-  ITEMicon: {fileID: 0}
-  itemType: 0
-  damage: 0
-  strength: 0
-  intellect: 0
-  vit: 0
-  dex: 0
 --- !u!114 &11421286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,29 +78,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb0ff98b989fa7b4ca5945c60e04cd96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponids: 0
---- !u!114 &11463946
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 146062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f520f88a3c49d1459ce3f4b73bd4a48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: 
-  itemDescription: 
-  itemID: 0
-  itemIcon: {fileID: 0}
-  ITEMicon: {fileID: 0}
-  itemType: 0
-  damage: 0
-  strength: 0
-  intellect: 0
-  vit: 0
-  dex: 0
 --- !u!114 &11468696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,6 +89,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bc0b2d30c64ea546b54623d3627ee30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11476348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d327c43ec4ed8d4196f63258657643e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  itemDescription: 
+  itemID: 0
+  itemIcon: {fileID: 0}
+  ITEMicon: {fileID: 0}
+  damage: 0
+  strength: 0
+  intellect: 0
+  vit: 0
+  dex: 0
+  itemType: 0
+  weaponType: 0
 --- !u!114 &11486618
 MonoBehaviour:
   m_ObjectHideFlags: 1
